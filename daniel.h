@@ -1,7 +1,7 @@
 //Hector Daniel Camacho Lopez     372239                                                     //
-//Ensenada, Baja California a 20 de Septiembre del 2023                                      //
+//Ensenada, Baja California a 15 de Octubre del 2023                                         //
 //Libreria                                                                                   //
-//Nombre de la actividad: HDCL_ACT9_01_432                                                   //
+//Nombre de la actividad: HDCL_ACT10_01_432                                                  //
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -20,9 +20,8 @@ void voltear(char cadena[60]);
 void noespacios(char cadena[60]);
 char permitir(char cadena[60]);
 void todas(char cadena[60]);
-void palindromo(char cadena[]);
 
-int valida_num(int ri, int rf);
+int valida_num(int ri, int rf, char msge[]);
 bool no_repetir(int vect[], int n);
 void llenar_vect_aleatorio(int vect[], int m, int ri, int rf);
 void llenar_matriz(int matriz[4][4], int m, int ri, int rf);
@@ -47,7 +46,6 @@ void mayusculas(char cadena[60])
             if (cadena[i] <= 122)
             {
                 cadena[i] = cadena[i] - 32;
-                printf("%c" ,cadena[i]);
             }
         }
     }
@@ -196,28 +194,19 @@ void todas(char cadena[60])
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////      
 
 // FUNCION QUE VALIDA NUMEROS //
-int valida_num(int ri, int rf)
+int valida_num(int ri, int rf, char msge[])
 {
+    char xnum[40];
     int n;
-    char xnum[30];
-    printf("\nDame un numero entre el %d y %d: ", ri, rf);
-    scanf("%c", &xnum);
-    fflush(stdin);
-    gets(xnum);
-    n = atoi(xnum);
-    if (n > rf)
+    do
     {
-        printf("\nNUMERO FUERA DE RANGO");
-        n = 70;
-    }
-    
-    if (n < ri)
-    {
-        printf("\nNUMERO MUY PEQUEÑO PARA EL RANGO");
-        n = 30;
-    }
-
+        puts(msge);
+        fflush(stdin);
+        gets(xnum);
+        n = atoi(xnum);
+    } while (n < ri || n > rf);
     return n;
+    
 }
 
 // FUNCION QUE EVITA NUMEROS REPETIDOS EN VECTOR //
@@ -364,7 +353,7 @@ int busq_sec(int vect[], int n, int num)
 void buscar (int vect[], int m)
 {
     int num, x, i;
-    num = valida_num(100, 200);
+    num = valida_num(100, 200, "Buscando");
     x = busq_sec(vect, M, num);
     if (x != -1)
     {
