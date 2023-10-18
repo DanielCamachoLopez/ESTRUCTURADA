@@ -1,0 +1,217 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMlBbxyjeSka7Sr4fkJtvVm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/DanielCamachoLopez/ESTRUCTURADA/blob/main/HDCL_ACT9_README.mb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##ACTIVIDAD 9\n",
+        "Nombre: Hector Daniel Camacho Lopez\n",
+        "\n",
+        "Matricula:372239\n",
+        "\n",
+        "Grupo: 432\n",
+        "\n",
+        "Fecha: Ensenada, Baja California a 16 Octubre del 2023"
+      ],
+      "metadata": {
+        "id": "nbKGGR3YXXEo"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Realiza un programa en python que utilice el siguiente menu: MENU, 1.- Crear Diccionario, 2.- Imprimir Diccionario , 0.- Salir"
+      ],
+      "metadata": {
+        "id": "4OhD3aM5XWu5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "from IPython.display import clear_output"
+      ],
+      "metadata": {
+        "id": "XXHW6ULjYse4"
+      },
+      "execution_count": 149,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FUNCION QUE GENERA DICCIONARIO"
+      ],
+      "metadata": {
+        "id": "ZRP2rtoa12k6"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def generador():\n",
+        "  try:\n",
+        "\n",
+        "    nom_masc = [\"SANTIAGO\", \"MATEO\", \"SEBASTIAN\", \"LEONARDO\", \"MATIAS\", \"EMILIANO\", \"DIEGO\", \"DANIEL\", \"HECTOR\", \"MIGUEL\", \"ALEXANDER\", \"ALEJANDRO\", \"JESUS\", \"GAEL\", \"OMAR\", \"ALBERTO\", \"ANGEL\", \"ARMANDO\", \"LUIS\", \"AARON\"]\n",
+        "    nom_feme = [\"SOFIA\", \"VALENTINA\", \"REGINA\", \"MARIA\", \"XIMENA\", \"CAMILA\", \"FERNANDA\", \"GENESIS\", \"LARA\", \"VICTORIA\", \"VALERIA\", \"GUADALUPE\", \"ESMERALDA\", \"JUANA\", \"MARGARITA\", \"LETICIA\", \"LUCIA\", \"ROSA\", \"FLOR\", \"ALEJANDRA\"]\n",
+        "    apellidos = [\"VICENTE\", \"HERMANDEZ\", \"GARCIA\", \"MARTINEZ\", \"LOPEZ\", \"CAMACHO\", \"GONZALES\", \"PEREZ\", \"RODRIGUEZ\", \"SANCHEZ\", \"RAMIREZ\", \"CRUZ\", \"GOMEZ\", \"FLORES\", \"MORALES\", \"VAZQUEZ\", \"JIMENEZ\", \"REYES\", \"DIAZ\", \"TORRES\"]\n",
+        "    dicc[\"id\"] = random.randint(300000, 399999)\n",
+        "    dicc[\"sexo\"] = random.randint(0,1)\n",
+        "    rand = random.randint(0,1)\n",
+        "    if dicc[\"sexo\"] == 1:\n",
+        "      dicc[\"sexo\"] = 'H'\n",
+        "      if rand == 1:\n",
+        "         dicc[\"nombre1\"] = random.choice(nom_masc)\n",
+        "         dicc[\"apellido paterno\"] = random.choice(apellidos)\n",
+        "         dicc[\"apellido materno\"] = random.choice(apellidos)\n",
+        "      else:\n",
+        "        dicc[\"nombre1\"] = random.choice(nom_masc)\n",
+        "        dicc[\"nombre2\"] = random.choice(nom_masc)\n",
+        "        dicc[\"apellido paterno\"] = random.choice(apellidos)\n",
+        "        dicc[\"apellido materno\"] = random.choice(apellidos)\n",
+        "\n",
+        "    else:\n",
+        "      dicc[\"sexo\"] = 'M'\n",
+        "      if rand == 1:\n",
+        "        dicc[\"nombre1\"] = random.choice(nom_feme)\n",
+        "        dicc[\"apellido paterno\"] = random.choice(apellidos)\n",
+        "        dicc[\"apellido materno\"] = random.choice(apellidos)\n",
+        "      else:\n",
+        "        dicc[\"nombre1\"] = random.choice(nom_feme)\n",
+        "        dicc[\"nombre2\"] = random.choice(nom_feme)\n",
+        "        dicc[\"apellido paterno\"] = random.choice(apellidos)\n",
+        "        dicc[\"apellido materno\"] = random.choice(apellidos)\n",
+        "    dicc[\"edad\"] = random.randint(10, 60)\n",
+        "  except:\n",
+        "    print(\"ERROR\")\n",
+        "    i = i + 1\n",
+        "\n",
+        "  return dicc\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "1sP2sbVgXWUx"
+      },
+      "execution_count": 162,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FUNCION QUE IMPRIME DICCIONARIO"
+      ],
+      "metadata": {
+        "id": "0H3UdN3K15ce"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def imprimir(dicc):\n",
+        "  for j in range(0, i):\n",
+        "    print(\"            REGISTRO           \")\n",
+        "    for key in dicc:\n",
+        "      print(key, \":\", dicc[key])\n",
+        "    input(\"PRESIONA ENTER\")\n"
+      ],
+      "metadata": {
+        "id": "Uxh6h0Etg3ea"
+      },
+      "execution_count": 163,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "MENU PRINCIPAL"
+      ],
+      "metadata": {
+        "id": "2a8whU3s2CiM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "try:\n",
+        "  dicc = {}\n",
+        "  opc = 1\n",
+        "  i = 0\n",
+        "  while opc != 0:\n",
+        "    print(\"             MENU            \")\n",
+        "    print(\"1. Crear diccionario\")\n",
+        "    print(\"2. Imprimir diccionario\")\n",
+        "    print(\"0. SALIR\")\n",
+        "    opc = int(input(\"Que deseas hacer? Ingresa el numero correspondiente: \"))\n",
+        "\n",
+        "    if opc == 1:\n",
+        "      dicc = generador()\n",
+        "\n",
+        "    elif opc == 2:\n",
+        "      imprimir(dicc)\n",
+        "\n",
+        "    elif opc == 0:\n",
+        "      print(\"Elegiste SALIR\")\n",
+        "    i = i + 1\n",
+        "    clear_output()\n",
+        "\n",
+        "except:\n",
+        "  print(\"ERROR\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "JYa1KMzregtq",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "af048441-592e-45a8-dc74-e5da6f2f314c"
+      },
+      "execution_count": 164,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "             MENU            \n",
+            "1. Crear diccionario\n",
+            "2. Imprimir diccionario\n",
+            "0. SALIR\n",
+            "            REGISTRO           \n",
+            "id : 319575\n",
+            "sexo : H\n",
+            "nombre1 : MIGUEL\n",
+            "apellido paterno : CRUZ\n",
+            "apellido materno : VAZQUEZ\n",
+            "edad : 41\n",
+            "ERROR\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
